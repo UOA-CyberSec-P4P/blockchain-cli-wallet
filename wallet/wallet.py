@@ -4,7 +4,7 @@
 from .block import Block
 from .transaction import Transaction
 from .utxo import TxInput, TxOutput
-from proof_of_work import ProofOfWork
+from .proof_of_work import ProofOfWork
 from .request import get, post
 
 
