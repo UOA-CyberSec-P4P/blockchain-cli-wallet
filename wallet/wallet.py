@@ -15,7 +15,7 @@ class Wallet:
         self,
         address: str,
         private_key: str | None = None,
-        node_url: str = 'http://0.0.0.0:5000',
+        node_url: str = 'http://0.0.0.0:3000',
         merchant_url: str = 'http://127.0.0.1:5001',
     ):
         if not isinstance(address, str) or not address:

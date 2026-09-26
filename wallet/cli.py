@@ -8,7 +8,7 @@ from .wallet import Wallet
 
 def main() -> None:
     parser = argparse.ArgumentParser(prog='wallet')
-    node = os.getenv('BLOCKCHAIN_URL', 'http://0.0.0.0:5000')
+    node = os.getenv('BLOCKCHAIN_URL', 'http://0.0.0.0:3000')
     merchant = os.getenv('MERCHANT_URL', 'http://127.0.0.1:5001')
     merchant_address = os.getenv('MERCHANT_ADDRESS', 'university')
     primary_address = os.getenv('STUDENT_PRIMARY_ADDRESS', 'UoA1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa')
