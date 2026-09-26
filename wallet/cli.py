@@ -25,13 +25,13 @@ def main() -> None:
     balance = commands.add_parser('balance', help="Get the balance of the given wallet.")
     balance.add_argument('--wallet', choices=('primary', 'secondary'), help="The wallet to query.")
 
-    send = commands.add_parser('send', help="Send grade points from one of your wallets to a recipient.")
+    send = commands.add_parser('send', help="Send points from one of your wallets to a recipient.")
     send.add_argument('--wallet', choices=('primary', 'secondary'), help="The wallet to send from.")
     send.add_argument('recipient', help=f"The address of the recipient wallet, or {merchant_address} to send to the university grading office.")
-    send.add_argument('amount', type=int, help="The amount of grade points to send, as a positive integer.")
+    send.add_argument('amount', type=int, help="The amount of points to send, as a positive integer.")
 
     redeem = commands.add_parser('redeem', help="Redeem a reward from the university grading office.")
-    redeem.add_argument('transaction_id', help="The ID of the transaction that sent the grade points to the university.")
+    redeem.add_argument('transaction_id', help="The ID of the transaction that sent the points to the university.")
     redeem.add_argument('piece', type=int, choices=(1, 2), help="The reward piece to redeem (#1 or #2).")
 
     # buy = commands.add_parser('buy', help="A convenience method that transacts with the merchant, mines a block with the transaction, and redeems a reward piece.")

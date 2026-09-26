@@ -79,7 +79,7 @@ class Wallet:
         }, self.node_url)
 
     def buy(self, piece: int) -> dict:
-        """Pay the merchant 15 grade points, mine the payment, then collect a reward piece."""
+        """Pay the merchant 15 points, mine the payment, then collect a reward piece."""
         payment = self.send('merchant', 15)
         mined = self.mine(transaction_ids=[payment['id']])
         delivery = self.redeem(payment['id'], piece)
