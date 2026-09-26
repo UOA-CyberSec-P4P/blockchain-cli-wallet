@@ -18,6 +18,8 @@ def main() -> None:
 
     commands = parser.add_subparsers(dest='command', required=True)
 
+    commands.add_parser('info', help="Get information about the blockchain's address.")
+
     commands.add_parser('list', help="List all wallets and their balances.")
 
     balance = commands.add_parser('balance', help="Get the balance of the given wallet.")
@@ -53,8 +55,13 @@ def main() -> None:
         'primary': Wallet(primary_address, primary_private_key, node, merchant),
         'secondary': Wallet(secondary_address, secondary_private_key, node, merchant),
     }
+    result: object
     try:
-        if args.command == 'list':
+        if args.command == 'info':
+            result = {
+                'blockchain_address': node,
+            }
+        elif args.command == 'list':
             result = {
                 'wallets': [
                     {'name': name, 'address': wallet.address, 'balance': wallet.balance()}
